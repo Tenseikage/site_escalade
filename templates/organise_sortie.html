@@ -1,0 +1,42 @@
+{% extends "skeleton.html" %}
+{%block content%}
+        <p class="title_connect"><b>Organisation de votre sortie</b></p>
+        <form method="post" action="choix_sorties_voies">
+            <input type="text" name="id_adherent" required placeholder="Numéro d'adhérent">
+            <select name="niv_grimpeur" required>
+              <option value=""disabled selected hidden>--Choisissez le niveau de la sortie--</option>
+              {% for niveau in level %}
+              <option value="{{niveau.nivfr}}" >{{niveau.nivfr}}</option>"
+              {% endfor %}
+            </select>
+            <select name="choix_sortie" required>
+              <option value=""disabled selected hidden>--Choisissez votre localité</option>
+              {% for donnees in data_out %}
+              <option value="{{donnees.nom_site}} {{donnees.localite}}" >Site: {{donnees.nom_site}} Loc:{{donnees.localite}} </option>"
+              {% endfor %}
+            </select>
+            <select name="choix_maniere" required>
+              <option value=""disabled selected hidden>--Choisissez la manière d'escalader--</option>
+              <option value="traditionnelle">Traditionnelle</option>
+              <option value="artificielle">Artificielle</option>
+              <option value="sportive">Sportive</option>
+              <option value="solo_integral">Solo Intégral</option>
+            </select>
+            <input type="date" name="date_escalade" placeholder="jj/mm/aaaa" required>
+            <label class="msg_desc">Votre description</label>
+            <br>
+            <textarea name="msg_description" cols="20" rows="5"></textarea>
+          <input type=submit value="Valider">
+        </form>
+        {% if msg_erreur%}
+        <div class="error_msg">
+          {{msg_erreur}}
+        </div>
+        {% endif %}
+
+
+        <div class="no_subscription">
+          <p> Vous n'avez pas de compte chez nous ? <a href="inscription">Inscription</a></p>
+        </div>
+        <br><br><br><br><br><br><br>
+{%endblock%}

@@ -1,0 +1,31 @@
+{% extends "skeleton.html" %}
+{%block content%}
+       <h2 class="titre_localites"> Voici les localités dans laquelle l'association mène des sorties.</h2>
+      <br><br>
+    </main>
+
+   
+    <div class="image-container">
+        <a href="localites/{{loca[0].localite}}"><img src="/static/pyrenees.png" alt="Pyrénées"></a>
+        <p class="caption">Les Pyrénées</p>
+    </div>
+
+    <div class="image-container">
+        <a href="localites/{{loca[2].localite}}"><img src="/static/hautes_alpes.png" alt="Hautes Alpes"></a>
+        <p class="caption">Hautes Alpes</p>
+    </div>
+
+    <div class="image-container">
+        <a href="localites/{{loca[1].localite}}"><img src="/static/haute_savoie.png" alt="Haute Savoie"></a>
+        <p class="caption">Haute Savoie</p>
+    </div>
+
+    <div class="image-container">
+        <a href="localites/{{loca[3].localite}}"><img src="/static/massif_central.png" alt="Massif Central"></a>
+        <p class="caption">Massif Central</p>
+    </div>
+    <br><br><br><br><br><br><br>
+
+
+{%endblock%}
+

@@ -1,0 +1,14 @@
+{% extends "skeleton.html" %}
+{%block content%}
+
+    <main class = present>
+      <h2> Profile D'adhérent</h2>
+      <ul>
+        <li>Prénom: {{results[0].prenom}}</li>
+        <li>Nom: {{results[0].nom}} </li>
+        <li>Adresse mail: {{results[0].email}}</li>
+        <li>Niveau de grimpeur: {{results[0].niv_grimpeur}}</li>
+      </ul>
+      <br><br><br><br>
+    </main>
+{%endblock%}

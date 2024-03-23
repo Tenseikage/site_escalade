@@ -1,0 +1,15 @@
+{% extends "skeleton.html" %}
+{%block content%}
+
+      <form action="choix_sortie" method="post">
+        <input type="text" name="num_sortie" placeholder="Numéro de sortie" required>
+        <select name="del_close" required>
+          <option value="">--Que voulez-vous faire</option>
+          <option value="cloturer">Cloturer la sortie</option>
+          <option value="supprimer">Supprimer la sortie</option>
+        </select>
+         <p style="text-align: center;"> Choisissez le nom de votre cordée si vous prévoyez de cloturer la sortie</p>
+         <input type="text" name= "nom_cordee" placeholder="Nom de cordee">
+        <input type="submit" value="Valider">
+      </form>
+{%endblock%}

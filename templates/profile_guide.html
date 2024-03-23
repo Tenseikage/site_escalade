@@ -1,0 +1,14 @@
+{% extends "skeleton.html" %}
+{%block content%}
+
+    <main class = present>
+      <h2> Profil de Guide</h2>
+      <ul>
+        <li>Prénom: {{results[0].prenom}}</li>
+        <li>Nom: {{results[0].nom}} </li>
+        <li>Adresse mail: {{results[0].email}}</li>
+        <li>Niveau de guide: {{results[0].niv_guide}}</li>
+      </ul>
+      <br><br><br><br>
+    </main>
+{%endblock%}

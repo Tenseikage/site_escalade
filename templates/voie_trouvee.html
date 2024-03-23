@@ -1,0 +1,36 @@
+{% extends "skeleton.html" %}
+{%block content%}
+
+{% if not msg_erreur%}
+<main class="present">
+   <h2> Voies trouvée(s)</h2>
+</main>
+<p style="margin-left: 30px;">Légende: Code Voie: 1 = Falaise; Code Voie: 2 = Roc</p>
+    <table class = "table_niv">
+      <thead>
+          <tr>
+              <th>Identifiant de voie</th>
+              <th>Nom de la voie</th>
+              <th>Longueur de la voie en mètres</th>
+              <th>Niveau d'escalade requis</th>
+              <th>Code de voie</th>
+          </tr>
+      </thead>
+      <tbody>
+         {% for data in dat_voie %}
+          <tr>
+              <td>{{data.id_voie}}</td><td><a href="/voie_trouvee/{{data.id_voie}}">{{data.nom_voie}}</a></td><td>{{data.longueur_voie}}</td><td>{{data.nivfr}}</td><td>{{data.code_voie}}</td>
+          </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+
+{%else%}
+<div class="error_msg" style="margin-top: 30px;">
+{{msg_erreur}}
+</div>
+{%endif%}
+
+
+
+{%endblock%}

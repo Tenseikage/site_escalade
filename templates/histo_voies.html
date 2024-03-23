@@ -1,0 +1,15 @@
+{% extends "skeleton.html" %}
+{%block content%}
+{% if msg_erreur %}
+<h2 style="color: red;">{{msg_erreur}}</h2>
+{%else%}
+<h2>Détails sur l'ouverture de la voie</h2>
+<ul>
+    <li>Numéro de cordée: {{data_first.id_cordee}}</li>
+    <li>Manière :{{data_first.maniere}} </li>
+    <li>Nom de la cordee: {{data_first.nom_cordee}}</li>
+    <li>Nombre de participants: {{data_first.participants}}</li>
+    <li>Date de l'escalade : {{data_first.date_escalade}}</li>
+  </ul>
+{%endif%}
+{%endblock%}

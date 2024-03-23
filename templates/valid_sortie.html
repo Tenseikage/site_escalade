@@ -1,0 +1,10 @@
+{% extends "skeleton.html" %}
+{%block content%}
+
+{%if msg_prev%}
+<h3 style="color: red;"> {{msg_prev}}</h3>
+{%else%}
+<h3>Votre sortie a bien été crée</h3>
+{%endif%}
+
+{%endblock%}

@@ -1,0 +1,15 @@
+{% extends "skeleton.html" %}
+{%block content%}
+
+    <main class="present">
+      <h2><u>Voici les pricipaux sites présents dans la région</u></h2>
+    </main>
+    <div>
+      <ul>
+      {% for data in result%}
+      <li><a href="{{data.nom_site}}">{{data.nom_site}}</a></li>
+      {%endfor%}
+    </ul>
+    </div>
+
+{%endblock%}

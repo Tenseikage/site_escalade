@@ -1,0 +1,26 @@
+{% extends "skeleton.html" %}
+{%block content%}
+    <main class = present>
+      <h2><u></u>Voici les principaux niveaux d'escalade</u>:</h2>
+      <br><br><br><br>
+    </main>
+    <table class = "table_niv">
+      <thead>
+          <tr>
+              <th>Niveau français</th>
+              <th>Niveau américain</th>
+              <th>Niveau anglais</th>
+          </tr>
+      </thead>
+      <tbody>
+         {% for data in niveau %}
+          <tr>
+              <td>{{data.nivfr}}</td><td>{{data.nivus}}</td><td>{{data.nivgb}}</td>
+          </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+
+  {%endblock%}
+
+      

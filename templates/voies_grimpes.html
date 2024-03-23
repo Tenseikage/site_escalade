@@ -1,0 +1,25 @@
+{% extends "skeleton.html" %}
+{%block content%}
+
+    <main class = present>
+      <h2> Historique des voies grimpées</h2>
+    </main>
+
+    <table class = "table_niv">
+      <thead>
+          <tr>
+              <th>Numéro de cordée</th>
+              <th>Numéro de voie</th>
+              <th>Manière d'escalade</th>
+              <th>Date</th>
+          </tr>
+      </thead>
+      <tbody>
+         {% for data in data_grimpe %}
+          <tr>
+              <td>{{data.id_cordee}}</td><td>{{data.id_voie}}</td><td>{{data.maniere}}</td><td>{{data.date_escalade}}</td>
+          </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+{%endblock%}

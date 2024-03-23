@@ -1,0 +1,28 @@
+{% extends "skeleton.html" %}
+{%block content%}
+    {%if msg_erreur %}
+    <main class = present>
+      <h2 style="color: red;">{{msg_erreur}}</h2> 
+    </main>
+    {%else%}
+    <main class = present>
+      <h2><u>Vous êtes bien inscrit à la sortie Voici vos collègues:</u></h2> 
+    </main>
+    <table class = "table_niv">
+      <thead>
+          <tr>
+              <th>Numéro d'adhérent</th>
+              <th>Prénom et nom</th>
+              
+          </tr>
+      </thead>
+      <tbody>
+         {% for data in data_inscrit%}
+          <tr>
+              <td>{{data.id_adherent}}</td><td>{{data.prenom}} {{data.nom}}</td>
+          {% endfor %}
+      </tbody>
+  </table>
+    
+    {%endif%}
+{% endblock %}

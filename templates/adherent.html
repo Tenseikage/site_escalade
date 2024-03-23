@@ -1,0 +1,22 @@
+{% extends "skeleton.html" %}
+{%block content%}
+
+    <main class = present>
+      <h2> Voici la liste de nos adhérents</h2>
+    </main>
+    <table class = "table_niv">
+      <thead>
+          <tr>
+              <th>Numéro d'adhérent</th>
+              <th>Prénom et nom</th> 
+          </tr>
+      </thead>
+      <tbody>
+        {% for donnee in personnes %}
+          <tr>
+              <td>{{donnee.id_adherent}}</td><td><a href="/adherent/{{donnee.prenom}} {{donnee.nom}} {{donnee.id_adherent}}">{{donnee.prenom}} {{donnee.nom}}</a></td>
+          </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+{%endblock%}

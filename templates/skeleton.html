@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escalade Passion</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='website.css') }}">
+</head>
+
+
+
+<body>
+    <header>
+        <div>
+            <a href="accueil"><img id="logo" src="{{ url_for('static', filename='logo_escalade.png') }}" alt="Logo AEP"></a>
+            
+        </div>
+        {% if connected %}
+        <div>
+          <a href="profil"><img id = "logo_profile" src=" {{ url_for('static', filename='logo_profile.png') }}" alt="logo_profile"></a>
+        </div>
+        {%endif%}
+        <h1 id = "main_head">Escalade Passion</h1>
+        <p id="main_head"><b>Association d'escaladeurs passionnés </b> !</p>
+    </header>
+            
+            <nav class = menu_site>
+              <ul>
+              <li><a href="accueil">Accueil</a></li>
+              <li><a href="nos_guides">Guides<span class="menu-arrow">&#9660;</span></a>
+                <ul>
+                  <li><a href="nos_guides">Nos guides</a></li>
+                  <li><a href="devenir_guide">Devenir guide</a></li>
+                </ul>
+              </li>
+              <li><a href="sorties_prevues">Sorties<span class="menu-arrow">&#9660;</span></a>
+                <ul>
+                  <li><a href="sorties_prevues">Sorties prévues </a></li>
+                  <li><a href="organise_sortie">Organiser une sortie</a></li>
+                </ul>
+                </li>
+              <li><a href="Association">L'Escalade chez nous<span class="menu-arrow">&#9660;</span></a>
+                  <ul>
+                    <li><a href="inscription"> inscription</a></li>
+                    <li><a href="niveaux">Niveaux d'escalade</a></li>
+                    <li> <a href="adherent">Nos adhérents</a></li>
+                    <li> <a href="recherche_voies">Recherches de voies</a></li>
+                    <li> <a href="voies_grimpes">Voies grimpées</a></li>
+                  </ul>
+              </li>
+              <li><a href="localites">Localités</a></li>
+              <li><a href="connexion">Connexion</a></li>
+
+              </ul>
+
+        </nav>
+
+      <div>
+        {%block content%} {% endblock %}
+      </div>
+      
+
+    
+      <footer>
+          <p>&copy; 2023 Escalade Passion. Tous droits réservés.</p>
+      </footer>
+</body>
+</html>

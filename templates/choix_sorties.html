@@ -1,0 +1,10 @@
+{% extends "skeleton.html" %}
+{%block content%}
+
+{%if msg_reussite%}
+<h3 style="color: lightgreen;"> {{msg_reussite}}</h3>
+{%else%}
+<h3>Votre sortie a bien été cloturé</h3>
+{%endif%}
+
+{%endblock%}

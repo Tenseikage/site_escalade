@@ -1,0 +1,37 @@
+
+{% extends "skeleton.html" %}
+{%block content%}
+    <main class = present>
+      <h2><u></u>Voici les sorties</u>:</h2>
+    </main>
+    <table class = "table_niv">
+      <thead>
+          <tr>
+              <th>Numéro de sortie</th>
+              <th>Numéro d'adhérent</th>
+              <th>Prénom et nom</th>
+              <th>Site_souhaité</th>
+              <th>Court description</th>
+              <th>Niveaux requis</th>
+              <th>Date de la sortie</th>
+              <th>Nombre d'adhérents inscrits</th>
+              <th>Participation</th>
+             
+          </tr>
+      </thead>
+      <tbody>
+         {% for data in data_sortie %}
+          <tr>
+            {%if modif_sortie and data.id_adherent == foo %}
+            <td>{{data.id_sortie}}</td><td>{{data.id_adherent}}</td><td>{{data.prenom}} {{data.nom}}</td><td>{{data.site_souhaite}}</td><td>{{data.court_description}}</td><td>{{data.nivfr}}</td><td>{{data.date_sortie}}</td><td>{{data.nbe_inscrits}}</td><td><a href="/params_sortie/">cloturer/supprimer la sortie</a></td>
+            {%else%}
+              <td>{{data.id_sortie}}</td><td>{{data.id_adherent}}</td><td>{{data.prenom}} {{data.nom}}</td><td>{{data.site_souhaite}}</td><td>{{data.court_description}}</td><td>{{data.nivfr}}</td><td>{{data.date_sortie}}</td><td>{{data.nbe_inscrits}}</td><td><a href="/sorties_prevues/{{data.id_sortie}}">Participation</a></td>
+            {%endif%}
+            </tr>
+          {% endfor %}
+      </tbody>
+     
+  </table>
+
+{%endblock%}
+

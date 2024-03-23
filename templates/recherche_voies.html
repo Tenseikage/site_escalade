@@ -1,0 +1,32 @@
+{% extends "skeleton.html" %}
+{%block content%}
+
+<p class="title_connect"><b>Recherche de voies</b></p>
+<form action="voie_trouvee" method="get">
+    <select name="choice_way" required>
+        <option value="">--Choisissez votre site d'escalade--</option>
+        {% for data in data_site%} 
+        <option value="{{data.nom_site}}">{{data.nom_site}}</option>
+        {%endfor%}
+    </select>
+    <select name="nivo" required>
+        <option value="">--Choisissez le niveau de voie--</option>
+        {% for data in level%} 
+        <option value="{{data.nivfr}}">{{data.nivfr}}</option>
+        {%endfor%}
+    </select>
+    <select name="long_way" required>
+        <option value="">--Choisissez l'intervalle de longueur</option>
+        <option value="100 200">Entre 100m et 200m</option>
+        <option value="201 400">Entre 201m et 400m</option>
+        <option value="401 600">Entre 401m et 600m</option>
+        <option value="601">Plus de 601m</option>
+    </select>
+    <input type="submit"value = "Valider">
+   
+
+
+    
+</form>
+
+{%endblock%}

@@ -1,0 +1,35 @@
+{% extends "skeleton.html" %}
+{%block content%}
+
+        <p class="title_connect"><b>Devenez Guide !</b></p>
+        <form method="post" action="verif_guide">
+            <input type="text" name="prenom" placeholder="Prénom" required >
+            <input type="text" name="nom" placeholder=  "Nom" required>
+            <input type="text" name="id_adherent" placeholder= "Numéro d'adhérent"required>  
+            <select name="niv_guide" required>
+              <option value=""disabled selected hidden>--Choisissez votre niveau--</option>
+              {% for niveau in level %}
+              <option value="{{niveau.nivfr}}" >{{niveau.nivfr}}</option>"
+              {% endfor %}
+            </select>
+          <input type=submit value="Valider">
+          {% if msg_erreur%}
+          <div class="error_msg">
+          {{msg_erreur}}
+          </div>
+          {%endif%}
+          {% if msg_succes%}
+          <div class="sucess_msg">
+          {{msg_succes}}
+          </div>
+          {%endif%}
+          {% if msg_erreur1%}
+          <div class="error_msg">
+          {{msg_erreur1}}
+          </div>
+          {%endif%}
+
+
+
+{%endblock%}
+  

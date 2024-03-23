@@ -1,0 +1,30 @@
+
+{% extends "skeleton.html" %}
+{%block content%}
+{% if not msg_erreur%}
+        <p class="title_connect"><b>Première inscription</b></p>
+        <form method="post" action="verification">
+          
+            <input type="text" name="prenom" placeholder="Prénom" required >
+            <input type="text" name="nom" placeholder=  "Nom" required>
+            <input type="text" name="email"  placeholder = "Email"required>
+            <input type="password" name="password" placeholder= "Mot de passe" required>
+            <select name="niv_grimpeur" required>
+              <option value=""disabled selected hidden>--Choisissez votre niveau--</option>
+              {% for niveau in level %}
+              <option value="{{niveau.nivfr}}" >{{niveau.nivfr}}</option>"
+              {% endfor %}
+            </select>
+             
+          <input type=submit value="Valider">
+        </form>
+
+    {%else%}
+    <div class="already_subscribed">
+    {{msg_erreur}}
+    </div>
+    {%endif%}
+
+{%endblock%}
+        
+       
